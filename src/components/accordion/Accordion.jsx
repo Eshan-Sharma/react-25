@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "./data.json";
+import "./style.css";
 
 export default function Accordion() {
   function handleSingleSelection(getCurrentId) {
