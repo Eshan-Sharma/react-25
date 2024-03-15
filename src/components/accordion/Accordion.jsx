@@ -3,7 +3,7 @@ import data from "./data.json";
 
 export default function Accordion() {
   function handleSingleSelection(getCurrentId) {
-    setSelected(getCurrentId);
+    setSelected(selected === getCurrentId ? null : getCurrentId);
     console.log(getCurrentId);
   }
   const [selected, setSelected] = useState(null);
