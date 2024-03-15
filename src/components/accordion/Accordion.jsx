@@ -10,6 +10,7 @@ export default function Accordion() {
   const [selected, setSelected] = useState(null);
   return (
     <div className="wrapper">
+      <button>Enable Multiselect</button>
       <div className="accordion">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
