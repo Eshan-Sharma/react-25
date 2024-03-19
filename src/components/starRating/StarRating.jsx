@@ -8,15 +8,14 @@ export default function StarRating({ noOfStars = 10 }) {
 
   function handleClick(getCurrentIndex) {
     setRating(getCurrentIndex);
-    console.log(getCurrentIndex);
   }
+
   function handleMouseMove(getCurrentIndex) {
     setHover(getCurrentIndex);
-    console.log(getCurrentIndex);
   }
+
   function handleMouseLeave() {
-    setHover(0);
-    console.log(hover);
+    setHover(rating);
   }
   return (
     <div className="star-rating flex justify-center">
@@ -25,15 +24,17 @@ export default function StarRating({ noOfStars = 10 }) {
         return (
           <FaStar
             key={index}
+            color={index <= rating || index <= hover ? "gold" : "gray"}
             onClick={() => handleClick(index)}
-            onMouseMove={() => handleMouseMove(index)}
+            onMouseEnter={() => handleMouseMove(index)}
             onMouseLeave={() => handleMouseLeave()}
-            color={index <= (rating || hover) ? "gold" : "gray"}
             style={{ cursor: "pointer" }}
             size={40}
           />
         );
       })}
+      {console.log(hover)}
+      {console.log(rating)}
     </div>
   );
 }
