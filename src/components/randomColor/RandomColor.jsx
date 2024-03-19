@@ -27,7 +27,7 @@ export default function RandomColor() {
     }
   }
   function generateRandomHex() {
-    setTypeOfColor("hex");
+    setTypeOfColor("HEX");
     const hex = [
       "0",
       "1",
@@ -55,7 +55,7 @@ export default function RandomColor() {
   }
 
   function generateRandomRGB() {
-    setTypeOfColor("rgb");
+    setTypeOfColor("RGB");
     setColor(
       `rgb(${Math.floor(Math.random() * 255)},
            ${Math.floor(Math.random() * 255)}, 
@@ -64,31 +64,39 @@ export default function RandomColor() {
   }
   return (
     <div
-      className="flex justify-center space-x-4"
+      className="flex  flex-col justify-center space-x-4 "
       style={{ backgroundColor: `${color}` }}
     >
-      <button
-        onClick={() => generateRandomHex()}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-      >
-        HEX color
-      </button>
-      <button
-        onClick={() => generateRandomRGB()}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-      >
-        RGB Color
-      </button>
-      <button
-        onClick={
-          typeOfColor === "hex"
-            ? () => generateRandomHex()
-            : () => generateRandomRGB()
-        }
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-      >
-        Generate Random Color
-      </button>
+      <div role="group" className="flex justify-center space-x-3 mb-11">
+        <button
+          onClick={() => generateRandomHex()}
+          className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >
+          HEX color
+        </button>
+        <button
+          onClick={() => generateRandomRGB()}
+          className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >
+          RGB Color
+        </button>
+        <button
+          onClick={
+            typeOfColor === "HEX"
+              ? () => generateRandomHex()
+              : () => generateRandomRGB()
+          }
+          className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >
+          Generate Random Color
+        </button>
+      </div>
+
+      <div className="flex flex-col justify-center content-center text-center text-2xl text-white mb-11">
+        {typeOfColor === "HEX" ? "HEX Color" : "RGB Color"}
+        <br></br>
+        {color}
+      </div>
     </div>
   );
 }
