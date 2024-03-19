@@ -8,3 +8,4 @@ Projects Completed
   - Multiple open
 
 - Random Color
+- Star rating
