@@ -1,18 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import imagesData from "./images.json";
 
 export default function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [images, setImages] = useState([]);
   let length = images.length;
-  const url = `https://picsum.photos/v2/list?page=2&limit=10`;
 
-  async function getImages(getUrl) {
-    const response = await fetch(getUrl);
-    const data = response.json();
-    setImages(data);
-  }
   const nextSlider = () => {
     setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
   };
@@ -22,8 +17,8 @@ export default function ImageSlider() {
   };
 
   useEffect(() => {
-    getImages(url);
-  }, [url]);
+    setImages(imagesData);
+  }, []);
 
   return (
     <div className="container">
