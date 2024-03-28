@@ -27,10 +27,18 @@ export default function ImageSlider() {
 
   return (
     <div className="container">
-      \
       <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlider} />
       <FaArrowAltCircleRight className="right-arrow" onClick={nextSlider} />
-      {images.map((image, index) => {})}
+      {images.map((image, index) => {
+        return (
+          <div
+            className={index === currentSlide ? "slide-active" : "slide"}
+            key={index}
+          >
+            {index == currentSlide && <img src={image.download_url} />}
+          </div>
+        );
+      })}
     </div>
   );
 }
