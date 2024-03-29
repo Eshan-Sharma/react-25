@@ -16,7 +16,7 @@ export default function LoadMoreButton() {
       const data = await response.json();
       console.log(data.products);
 
-      if (data && data.products && data.products.length) {
+      if (data?.products?.length) {
         setProducts((prevData) => [...prevData, ...data.products]);
         setLoading(false);
       }
@@ -29,20 +29,21 @@ export default function LoadMoreButton() {
     fetchProducts();
   }, [count]);
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-2">
       {loading ? <div>Loading products! Please wait</div> : <div></div>}
-      <div className="grid grid-cols-4 gap-10">
-        {products && products.length
-          ? products.map((product) => {
-              <div
-                key={product.id}
-                className="p-20 border-solid border-gray-500 flex flex-col gap-10"
-              >
-                <img src={product.thumbnail} />
-                <p>{product.title}</p>
-              </div>;
-            })
-          : null}
+      <div className="grid grid-cols-4 gap-1">
+        {console.log(products.length)}
+        {products.length &&
+          products.map((product) => (
+            <div
+              key={Math.random()}
+              className="p-20 border-solid border-gray-500 flex flex-col gap-1"
+            >
+              <img src={product.images[0]} alt={product.title} />
+              {/* {console.log(product.thumbnail)} */}
+              <p>{product.title}</p>
+            </div>
+          ))}
       </div>
       <div className="button-container">
         <button>Load more Products</button>
