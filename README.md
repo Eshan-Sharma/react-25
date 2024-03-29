@@ -10,3 +10,4 @@ Projects Completed
 - Random Color
 - Star rating
 - Image Slider
+- Load more button
