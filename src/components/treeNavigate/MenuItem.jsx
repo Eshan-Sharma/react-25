@@ -13,7 +13,7 @@ export default function MenuItem({ item }) {
   }
   return (
     <li>
-      <div>
+      <div className="flex items-center gap-1 cursor-pointer text-white">
         <p>{item.label}</p>
         {item && item.children && item.children.length ? (
           <span onClick={() => handleToggle(item.label)}>
