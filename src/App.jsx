@@ -6,6 +6,7 @@ import ImageSlider from "./components/imageSlider/ImageSlider";
 import LoadMoreButton from "./components/loadMoreButton/LoadMoreButton";
 import TreeNavigate from "./components/treeNavigate/TreeNavigate";
 import menus from "./components/treeNavigate/data";
+import QrCodeGenerator from "./components/qrCodeGenerator/QrCodeGenerator";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <ImageSlider />
       <LoadMoreButton />
       <TreeNavigate menus={menus} />
+      <QrCodeGenerator />
     </>
   );
 }
