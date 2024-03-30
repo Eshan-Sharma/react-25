@@ -7,6 +7,7 @@ import LoadMoreButton from "./components/loadMoreButton/LoadMoreButton";
 import TreeNavigate from "./components/treeNavigate/TreeNavigate";
 import menus from "./components/treeNavigate/data";
 import QrCodeGenerator from "./components/qrCodeGenerator/QrCodeGenerator";
+import ThemeChange from "./components/themeChange/ThemeChange";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
       <LoadMoreButton />
       <TreeNavigate menus={menus} />
       <QrCodeGenerator />
+      <ThemeChange />
     </>
   );
 }
