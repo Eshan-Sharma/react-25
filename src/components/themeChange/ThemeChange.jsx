@@ -1,7 +1,7 @@
 import useLocalStorage from "./useLocalStorage";
 
 export default function ThemeChange() {
-  const [theme, setTheme] = useLocalStorage(theme, "dark");
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
   function handleToggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
