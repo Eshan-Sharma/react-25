@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MenuList from "./MenuList";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
 export default function MenuItem({ item }) {
@@ -16,7 +17,7 @@ export default function MenuItem({ item }) {
         <p>{item.label}</p>
         {item && item.children && item.children.length ? (
           <span onClick={() => handleToggle(item.label)}>
-            {displayCurrentChildren[item.label] ? "-" : "+"}
+            {displayCurrentChildren[item.label] ? <FaMinus /> : <FaPlus />}
           </span>
         ) : null}
       </div>
