@@ -20,7 +20,7 @@ function App() {
       <TreeNavigate menus={menus} />
       <QrCodeGenerator />
       <ThemeChange />
-      <ScrollIndicator />
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
     </>
   );
 }
