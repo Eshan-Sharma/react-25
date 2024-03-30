@@ -6,14 +6,16 @@ export default function ThemeChange() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
   return (
-    <div className="">
-      <div className="ml-2 pl-2">Hello world</div>
-      <button
-        onClick={handleToggleTheme}
-        className="ml-2 pl-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-      >
-        Change Theme
-      </button>
+    <div className="light-dark-mode bg-white dark:bg-black min-h-screen flex flex-col justify-center items-center text-2xl transition-all duration-500">
+      <div className="container flex flex-col justify-center items-center gap-6">
+        <p className="text-black dark:text-white text-5xl">Hello, world!</p>
+        <button
+          onClick={handleToggleTheme}
+          className="bg-black dark:bg-white border border-black dark:border-white text-white dark:text-black px-4 py-2 rounded-lg font-semibold transition-all duration-300"
+        >
+          Toggle Mode
+        </button>
+      </div>
     </div>
   );
 }
