@@ -8,6 +8,7 @@ import TreeNavigate from "./components/treeNavigate/TreeNavigate";
 import menus from "./components/treeNavigate/data";
 import QrCodeGenerator from "./components/qrCodeGenerator/QrCodeGenerator";
 import ThemeChange from "./components/themeChange/ThemeChange";
+import ScrollIndicator from "./components/scrollIndicator/ScrollIndicator";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
       <TreeNavigate menus={menus} />
       <QrCodeGenerator />
       <ThemeChange />
+      <ScrollIndicator />
     </>
   );
 }
