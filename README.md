@@ -16,3 +16,4 @@ Projects Completed
 - Theme Change
 - Custom Scroll indicator
 - Custom tabs
+- Custom Model popup
