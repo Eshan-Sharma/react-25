@@ -9,6 +9,7 @@ import menus from "./components/treeNavigate/data";
 import QrCodeGenerator from "./components/qrCodeGenerator/QrCodeGenerator";
 import ThemeChange from "./components/themeChange/ThemeChange";
 import ScrollIndicator from "./components/scrollIndicator/ScrollIndicator";
+import CustomTabsTest from "./components/customTabsIndicator/CustomTabsTest";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
       <QrCodeGenerator />
       <ThemeChange />
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      <CustomTabsTest />
     </>
   );
 }
