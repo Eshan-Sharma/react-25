@@ -11,6 +11,7 @@ import ThemeChange from "./components/themeChange/ThemeChange";
 import ScrollIndicator from "./components/scrollIndicator/ScrollIndicator";
 import CustomTabsTest from "./components/customTabsIndicator/CustomTabsTest";
 import ModelPopup from "./components/modelPopup/ModelPopup";
+import GithubProfileFinder from "./components/githubProfileFinder/GithubProfileFinder";
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
       <CustomTabsTest />
       <ModelPopup />
+      <GithubProfileFinder />
     </>
   );
 }
