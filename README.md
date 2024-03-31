@@ -14,3 +14,4 @@ Projects Completed
 - Tree view component/Menu UI component /Recursive navigation menu
 - QR Code generator
 - Theme Change
+- Custom Scroll indicator
