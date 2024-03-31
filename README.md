@@ -17,3 +17,4 @@ Projects Completed
 - Custom Scroll indicator
 - Custom tabs
 - Custom Model popup
+- Github Profile Finder
