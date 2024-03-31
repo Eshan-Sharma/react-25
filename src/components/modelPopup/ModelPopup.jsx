@@ -7,9 +7,15 @@ export default function ModelPopup() {
     setModelPopup(!modelPopup);
   }
   return (
-    <div>
-      <button onClick={() => handleToggleModelPopup()}>Open Model Popup</button>
-      {modelPopup && <Popup />}
+    <div className="flex flex-col items-center">
+      <button
+        className="bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => handleToggleModelPopup()}
+      >
+        Open Model Popup
+      </button>
+      <div>{modelPopup && <Popup body={<div>Customized content</div>} />}</div>
+      {console.log(modelPopup)}
     </div>
   );
 }
