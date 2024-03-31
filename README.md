@@ -15,3 +15,4 @@ Projects Completed
 - QR Code generator
 - Theme Change
 - Custom Scroll indicator
+- Custom tabs
