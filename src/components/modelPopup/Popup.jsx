@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Popup({ id, header, body, footer, onClose }) {
   return (
     <div
