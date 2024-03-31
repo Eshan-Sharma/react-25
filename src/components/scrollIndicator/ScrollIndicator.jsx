@@ -30,12 +30,6 @@ export default function ScrollIndicator({ url }) {
   }, [url]);
 
   function handleScrollPercentage() {
-    // console.log(
-    //   document.body.scrollTop,
-    //   document.documentElement.scrollTop,
-    //   document.documentElement.scrollHeight,
-    //   document.documentElement.clientHeight
-    // );
     const howMuchScrolled =
       document.body.scrollTop || document.documentElement.scrollTop;
     const height =
@@ -51,7 +45,7 @@ export default function ScrollIndicator({ url }) {
   }, []);
 
   return (
-    <div className="container">
+    <div className="flex flex-col items-center">
       {loading ? <div>Loading please wait!</div> : null}
       <h1>Custom Scroll Indicator</h1>
       <div>
