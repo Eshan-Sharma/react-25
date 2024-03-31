@@ -10,6 +10,7 @@ import QrCodeGenerator from "./components/qrCodeGenerator/QrCodeGenerator";
 import ThemeChange from "./components/themeChange/ThemeChange";
 import ScrollIndicator from "./components/scrollIndicator/ScrollIndicator";
 import CustomTabsTest from "./components/customTabsIndicator/CustomTabsTest";
+import ModelPopup from "./components/modelPopup/ModelPopup";
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
       <ThemeChange />
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
       <CustomTabsTest />
+      <ModelPopup />
     </>
   );
 }
