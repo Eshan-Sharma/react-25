@@ -1,22 +1,32 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import UserCard from "./UserCard";
 
 export default function GithubProfileFinder() {
   const [username, setUsername] = useState("eshan-sharma");
   const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   function handleSearch() {
-    console.log(username);
+    fetchGithubUserData();
   }
 
   async function fetchGithubUserData() {
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const userData = await response.json();
-    if (userData) {
-      setUserData(userData);
-      console.log(userData);
+    try {
+      setLoading(true);
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      const userData = await response.json();
+      if (userData) {
+        setUserData(userData);
+        setLoading(false);
+        setUsername("");
+      }
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
     }
   }
+
   useEffect(() => {
     fetchGithubUserData();
   }, []);
@@ -32,6 +42,11 @@ export default function GithubProfileFinder() {
         ></input>
         <button onClick={handleSearch}>Search</button>
       </div>
+      {loading ? (
+        <div>Loding please wait!</div>
+      ) : (
+        <UserCard user={userData}></UserCard>
+      )}
     </div>
   );
 }
