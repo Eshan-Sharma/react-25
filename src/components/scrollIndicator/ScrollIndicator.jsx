@@ -9,9 +9,14 @@ export default function ScrollIndicator({ url }) {
     try {
       const response = await fetch(getUrl);
       const dataFetched = await response.json();
-      setData(dataFetched);
-      setLoading(false);
-      console.log(dataFetched);
+      if (
+        dataFetched &&
+        dataFetched.products &&
+        dataFetched.products.length > 0
+      ) {
+        setData(dataFetched.products);
+        setLoading(false);
+      }
     } catch (error) {
       setLoading(false);
       console.error(error);
@@ -23,5 +28,15 @@ export default function ScrollIndicator({ url }) {
     fetchData(url);
   }, [url]);
 
-  return <div>Scroll</div>;
+  return (
+    <div className="container">
+      {loading ? <div>Loading please wait!</div> : null}
+      <h1>Custom Scroll Indicator</h1>
+      <div>
+        {data && data.length > 0
+          ? data.map((dataItem) => <p key={dataItem.id}>{dataItem.title}</p>)
+          : null}
+      </div>
+    </div>
+  );
 }
