@@ -46,8 +46,17 @@ export default function ScrollIndicator({ url }) {
 
   return (
     <div className="flex flex-col items-center">
+      <div className="fixed top-0 z-10 w-full text-center bg-green-900 text-white">
+        <h1>Custom Scroll Indicator</h1>
+        <div className="scroll-progress-tracking-container w-full h-2 bg-green-300">
+          <div
+            className="current-progress-bar h-2 bg-red-900"
+            style={{ width: `${scrollPercentage}%` }}
+          ></div>
+        </div>
+      </div>
+
       {loading ? <div>Loading please wait!</div> : null}
-      <h1>Custom Scroll Indicator</h1>
       <div>
         {data && data.length > 0
           ? data.map((dataItem) => <p key={dataItem.id}>{dataItem.title}</p>)
