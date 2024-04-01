@@ -13,6 +13,7 @@ import CustomTabsTest from "./components/customTabsIndicator/CustomTabsTest";
 import ModelPopup from "./components/modelPopup/ModelPopup";
 import GithubProfileFinder from "./components/githubProfileFinder/GithubProfileFinder";
 import AutoComplete from "./components/autoComplete/AutoComplete";
+import TicTacToe from "./components/tictactoe/TicTacToe";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
       <ModelPopup />
       <GithubProfileFinder />
       <AutoComplete />
+      <TicTacToe />
     </>
   );
 }
