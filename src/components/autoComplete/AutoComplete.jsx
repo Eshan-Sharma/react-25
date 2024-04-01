@@ -5,6 +5,7 @@ export default function AutoComplete() {
   const [loading, setLoading] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [filteredUsers, setFilteredUsers] = useState([]);
 
   async function fetchUserData() {
     try {
@@ -26,16 +27,31 @@ export default function AutoComplete() {
     fetchUserData();
   }, []);
 
+  function handleChange(e) {
+    const query = e.target.value.toLowerCase();
+    setUserInput(query);
+    if (query.length >= 1) {
+      const filteredData =
+        userData && userData.length
+          ? userData.filter((item) => item.toLowerCase().indexOf(query) > -1)
+          : [];
+      setFilteredUsers(filteredData);
+      setShowDropdown(true);
+    } else {
+      setShowDropdown(false);
+    }
+  }
+
   return (
     <div className="container">
       <input
         className="search-users"
         placeholder="Find user"
         onChange={(e) => {
-          setUserInput(e.target.value);
+          handleChange(e);
         }}
       ></input>
-      {console.log(userData)}
+      {console.log(filteredUsers)}
       {loading ? <div>Loading please wait!</div> : null}
     </div>
   );
