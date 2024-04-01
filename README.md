@@ -18,3 +18,4 @@ Projects Completed
 - Custom tabs
 - Custom Model popup
 - Github Profile Finder
+- Auto Suggestions
