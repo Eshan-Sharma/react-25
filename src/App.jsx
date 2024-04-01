@@ -12,6 +12,7 @@ import ScrollIndicator from "./components/scrollIndicator/ScrollIndicator";
 import CustomTabsTest from "./components/customTabsIndicator/CustomTabsTest";
 import ModelPopup from "./components/modelPopup/ModelPopup";
 import GithubProfileFinder from "./components/githubProfileFinder/GithubProfileFinder";
+import AutoComplete from "./components/autoComplete/AutoComplete";
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
       <CustomTabsTest />
       <ModelPopup />
       <GithubProfileFinder />
+      <AutoComplete />
     </>
   );
 }
