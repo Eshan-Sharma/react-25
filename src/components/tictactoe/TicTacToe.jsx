@@ -44,14 +44,14 @@ export default function TicTacToe() {
       ) {
         return squares[x];
       }
-      return null;
     }
+    return null;
   }
   useEffect(() => {
     if (!getWinner(squares) && squares.every((item) => item != "")) {
       setStatus("Game over, Draw!");
     } else if (getWinner(squares)) {
-      setStatus(`"Winner is ${getWinner(squares)}`);
+      setStatus(`Winner is ${getWinner(squares)}`);
     } else {
       setStatus(`Just keep playing`);
     }
