@@ -20,3 +20,4 @@ Projects Completed
 - Github Profile Finder
 - Auto Suggestions
 - TicTacToe
+- Pagination
