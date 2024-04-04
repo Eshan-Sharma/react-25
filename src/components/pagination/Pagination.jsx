@@ -17,10 +17,15 @@ const Pagination = () => {
 
   return (
     <div>
-      <h1>Pagination</h1>
-      <ul className="list-items">
+      <h1 className="text-3xl font-bold text-center mt-8">Pagination</h1>
+      <ul className="list-items grid gap-4 max-w-500px mx-auto mt-8">
         {currentListOfItems.map((listItem) => (
-          <li key={listItem.id}>{listItem.name}</li>
+          <li
+            className="p-4 bg-purple-600 text-white font-semibold"
+            key={listItem.id}
+          >
+            {listItem.name}
+          </li>
         ))}
       </ul>
       <CalcPagination

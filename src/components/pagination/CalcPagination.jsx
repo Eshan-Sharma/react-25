@@ -7,9 +7,9 @@ const CalcPagination = (currentPage, totalPages = 10, onPageChange) => {
     return pages;
   }
   return (
-    <div className="pagination">
+    <div className="pagination flex justify-center items-center mt-6">
       <button
-        className="pagination-btn"
+        className="pagination-btn px-4 py-2 m-1 bg-green-500 text-white rounded-lg cursor-pointer focus:outline-none"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage == 1}
       >
@@ -20,7 +20,7 @@ const CalcPagination = (currentPage, totalPages = 10, onPageChange) => {
         return (
           <button
             key={pageNo}
-            className="pagination-btn"
+            className="pagination-btn px-4 py-2 m-1 bg-green-500 text-white rounded-lg cursor-pointer focus:outline-none"
             onClick={() => onPageChange(pageNo)}
           >
             {pageNo}
@@ -28,7 +28,7 @@ const CalcPagination = (currentPage, totalPages = 10, onPageChange) => {
         );
       })}
       <button
-        className="pagination-btn"
+        className="pagination-btn px-4 py-2 m-1 bg-green-500 text-white rounded-lg cursor-pointer focus:outline-none"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage == totalPages}
       >
