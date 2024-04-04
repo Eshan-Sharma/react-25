@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const CalcPagination = ({ currentPage, totalPages, onPageChange }) => {
   function generatedNoOfPages() {
     const pages = [];
