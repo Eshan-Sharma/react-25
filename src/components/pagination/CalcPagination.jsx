@@ -1,7 +1,7 @@
-const CalcPagination = (currentPage, totalPages = 10, onPageChange) => {
+const CalcPagination = ({ currentPage, totalPages, onPageChange }) => {
   function generatedNoOfPages() {
     const pages = [];
-    for (let i = 1; i < totalPages; i++) {
+    for (let i = 1; i <= totalPages; i++) {
       pages.push(i);
     }
     return pages;
@@ -11,7 +11,7 @@ const CalcPagination = (currentPage, totalPages = 10, onPageChange) => {
       <button
         className="pagination-btn px-4 py-2 m-1 bg-green-500 text-white rounded-lg cursor-pointer focus:outline-none"
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage == 1}
+        disabled={currentPage === 1}
       >
         {" "}
         Prev
@@ -30,7 +30,7 @@ const CalcPagination = (currentPage, totalPages = 10, onPageChange) => {
       <button
         className="pagination-btn px-4 py-2 m-1 bg-green-500 text-white rounded-lg cursor-pointer focus:outline-none"
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage == totalPages}
+        disabled={currentPage === totalPages}
       >
         Next
       </button>
